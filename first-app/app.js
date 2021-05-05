@@ -1,6 +1,9 @@
-const logger = require("./logger")
-logger.log("testting")
+const EventEmitter = require("events")
+const emitter = new EventEmitter()
 
-//console.log(logger)
-// Youlikepython first-app$ node app.js
-// { log: [Function: log] }
+//register a listner
+emitter.on("messageLogged", (arg)=>{console.log(arg)})
+
+
+const log = require("./logger")
+log.log("testing!!")
